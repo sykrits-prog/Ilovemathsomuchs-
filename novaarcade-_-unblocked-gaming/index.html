@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaArcade | Unblocked Browser Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-[#020617] text-slate-100 min-h-screen flex flex-col font-sans selection:bg-indigo-500/30">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#020617]/80 backdrop-blur-xl border-b border-white/5 px-4 py-4 md:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3 cursor-pointer group" id="logo-btn">
+                <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-bolt text-white text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-black tracking-tighter bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">NOVAARCADE</h1>
+            </div>
+
+            <div class="relative w-full md:max-w-md group">
+                <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-indigo-500 transition-colors"></i>
+                <input type="text" id="search-input" placeholder="Search for a game..." 
+                    class="w-full bg-slate-900/50 border border-white/5 rounded-2xl py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:bg-slate-900 transition-all text-sm">
+            </div>
+
+            <div class="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <span class="hover:text-white cursor-pointer transition-colors">Trending</span>
+                <span class="hover:text-white cursor-pointer transition-colors">New</span>
+                <button class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl transition-all active:scale-95 shadow-lg shadow-indigo-600/20">Sign In</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-7xl mx-auto w-full px-4 py-8 md:px-8" id="home-view">
+        <!-- Categories -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar mb-8" id="category-list">
+            <button class="category-pill active" data-category="All">All</button>
+            <button class="category-pill" data-category="Action">Action</button>
+            <button class="category-pill" data-category="Puzzle">Puzzle</button>
+            <button class="category-pill" data-category="Arcade">Arcade</button>
+            <button class="category-pill" data-category="Strategy">Strategy</button>
+            <button class="category-pill" data-category="Sports">Sports</button>
+        </div>
+
+        <div class="mb-10">
+            <h2 class="text-3xl font-black mb-2" id="current-category-title">All Games</h2>
+            <p class="text-slate-500 font-medium">Curated selection of unblocked browser experiences.</p>
+        </div>
+
+        <!-- Games Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="games-grid">
+            <!-- Rendered by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden flex-col items-center justify-center py-20 bg-slate-900/20 rounded-[2.5rem] border border-dashed border-white/5">
+            <i class="fas fa-ghost text-5xl text-slate-800 mb-4"></i>
+            <p class="text-slate-500 font-bold">No games found matching your search.</p>
+        </div>
+    </main>
+
+    <!-- Game Viewer (Hidden by default) -->
+    <div id="game-viewer" class="fixed inset-0 z-[100] bg-black hidden flex-col">
+        <div class="bg-slate-950 border-b border-white/5 p-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <button id="back-btn" class="flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl transition-all border border-white/5 font-bold text-xs uppercase tracking-widest">
+                    <i class="fas fa-arrow-left"></i> <span>Back</span>
+                </button>
+                <div class="h-6 w-[1px] bg-white/10"></div>
+                <div>
+                    <h3 id="game-title" class="text-sm font-black text-white uppercase tracking-widest leading-none">Game Title</h3>
+                    <p id="game-meta" class="text-[10px] text-slate-500 font-bold uppercase tracking-tighter mt-1">Category</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="refresh-game" class="p-3 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white rounded-xl transition-all border border-white/5">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button id="fullscreen-game" class="p-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition-all shadow-lg shadow-indigo-600/20">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </div>
+        <div class="flex-1 relative bg-black flex items-center justify-center">
+            <iframe id="game-frame" src="" class="w-full h-full border-0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-slate-950/50 border-t border-white/5 py-12 px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-bolt text-indigo-500"></i>
+                    <span class="font-black text-xl tracking-tighter">NOVAARCADE</span>
+                </div>
+                <p class="text-slate-500 text-sm max-w-xs leading-relaxed">The ultimate hub for high-quality, unblocked browser gaming. Always free, always fast.</p>
+            </div>
+            <div class="flex gap-8 text-xs font-black uppercase tracking-widest text-slate-500">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+                <a href="#" class="hover:text-white transition-colors">Discord</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 text-center">
+            <p class="text-[10px] text-slate-600 font-bold uppercase tracking-[0.3em]">&copy; 2024 NovaArcade Gaming Network</p>
+        </div>
+    </footer>
+
+    <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

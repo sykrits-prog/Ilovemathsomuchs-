@@ -1,0 +1,9 @@
+
+{
+  "name": "NovaArcade | Unblocked Gaming",
+  "description": "A premium unblocked games portal with high-performance JS rendering and a library of unblocked browser titles.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

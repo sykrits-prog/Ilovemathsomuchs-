@@ -1,0 +1,59 @@
+
+[
+  {
+    "id": "2048",
+    "title": "2048",
+    "description": "Combine the tiles to reach the magic 2048 number. A classic brain teaser.",
+    "category": "Puzzle",
+    "thumbnail": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=400&q=80",
+    "iframeUrl": "https://play2048.co/"
+  },
+  {
+    "id": "hextris",
+    "title": "Hextris",
+    "description": "Fast-paced hexagon matching game. Don't let the bricks reach the top!",
+    "category": "Arcade",
+    "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=80",
+    "iframeUrl": "https://hextris.io/"
+  },
+  {
+    "id": "pacman",
+    "title": "Google Pacman",
+    "description": "The world-famous yellow ghost-eater. Originally a Google Doodle.",
+    "category": "Arcade",
+    "thumbnail": "https://images.unsplash.com/photo-1579309401359-10c01a086f5c?w=400&q=80",
+    "iframeUrl": "https://macek.github.io/google_pacman/"
+  },
+  {
+    "id": "tower-game",
+    "title": "Tower Stack",
+    "description": "Stack the blocks as perfectly as possible to reach the stars.",
+    "category": "Arcade",
+    "thumbnail": "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?w=400&q=80",
+    "iframeUrl": "https://tower-game.github.io/"
+  },
+  {
+    "id": "wordle",
+    "title": "Wordle",
+    "description": "Guess the 5-letter word in six tries. The ultimate daily word game.",
+    "category": "Puzzle",
+    "thumbnail": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&q=80",
+    "iframeUrl": "https://www.nytimes.com/games/wordle/index.html"
+  },
+  {
+    "id": "flappy-bird",
+    "title": "Flappy Bird",
+    "description": "Test your patience and timing in this legendary difficult arcade game.",
+    "category": "Arcade",
+    "thumbnail": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&q=80",
+    "iframeUrl": "https://flappybird.io/"
+  },
+  {
+    "id": "slope",
+    "title": "Slope 3D",
+    "description": "Endless fast-paced ball rolling game. Don't fall off the neon track.",
+    "category": "Action",
+    "thumbnail": "https://images.unsplash.com/photo-1614728263952-84ea206f99b6?w=400&q=80",
+    "iframeUrl": "https://slopegame.online/"
+  }
+]

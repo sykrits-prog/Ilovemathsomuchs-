@@ -1,0 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --indigo-500: #6366f1;
+    --indigo-600: #4f46e5;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.category-pill {
+    padding: 0.6rem 1.25rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    font-size: 0.875rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-pill:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.category-pill.active {
+    background: var(--indigo-600);
+    color: white;
+    box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
+    border-color: var(--indigo-500);
+}
+
+.game-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+iframe {
+    background-color: #000;
+}
